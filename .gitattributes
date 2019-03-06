@@ -1,3 +1,5 @@
 # Auto detect text files and perform LF normalization
-* text=auto
-*.x10 linguist-language=X0
+
+*.js linguist-language=x10
+*.css linguist-language=x10
+*.html linguist-language=x10
