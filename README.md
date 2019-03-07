@@ -1,6 +1,4 @@
-# PASP
-
-An X10-based Parallel Agent Simulation platform
+# PHASE(Parallel High-performence Agent-based Simulation Environment)
 
 A Demo: Game Of Life
 
