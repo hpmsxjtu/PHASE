@@ -1,6 +1,6 @@
-# ASDC
+# PASP
 
-An X10-based parallel agent simulation platform
+An X10-based Parallel Agent Simulation platform
 
 A Demo: Game Of Life
 
