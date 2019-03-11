@@ -1,58 +1,50 @@
 # PHASE(Parallel High-performence Agent-based Simulation Environment)
 
-A Demo: Game Of Life
+Demo: Game Of Life
 
-Version 1.0
+2019.3 Version 1.0
 
-1 介绍
+1 Description
 
-  1.1 简介
-  
-    本教程将介绍一系列示例演示构建 Agent Based Modeling of HPC模型的几种方法。 其目的是展示平台工具包中包含的一系列功能，并提供了如何构建以不同方式使用这些功能的模型的工作示例demo。 讨论一些功能与平台基础架构有关的内容，例如：如何设置和更改模型参数，获取和记录模拟输出，实现不同形式的随机数生成等。特别是如何便于构建一个ABM模型，在此模型中，agent根据某些结构约束（包括空间布置和网络连接）进行交互。
-   
-   1.2 要求
-  
-    本教程适用于任何想要了解平台详细信息并熟练掌握ABM模型的人员。对于对HPC环境不太熟悉的人来说，主要适用于了解“基于Agent建模（ABM）”基础知识、并且熟悉X10语言语法的人员。 
+    1.1 Introduction 
+    
+    This tutorial will introduce a series of examples demonstrating several ways to build an Agent Based Modeling of HPC model. Its purpose is to showcase a set of features included in the Platform Toolkit and to provide a working demo of how to build models that use these features in different ways. Discuss some of the features related to the platform infrastructure, such as how to set and change model parameters, get and record analog output, and implement different forms of random number generation. In particular, it is convenient to construct an ABM model in which agents interact according to certain structural constraints, including spatial placement and network connectivity.
+    
+    1.2 Requirement
+    
+    This tutorial is for anyone who wants to learn more about the platform and is proficient in the ABM model. For those who are not familiar with the HPC environment, it is mainly for people who understand the basics of Agent-Based Modeling (ABM) and are familiar with the X10 language grammar.
     
 2 Demo: Game Of Life
 
-  2.1 简介
-  
-    Game Of Life是生命游戏，元胞自动机（Cellular Automaton/Automata）中最著名的一组规则（该规则的想法可以追溯到冯·诺依曼，别名“生命游戏”）。每个细胞死或活的状态由它周围的八个细胞所决定。
-    1、“人口过少”：任何活细胞如果活邻居少于2个，则死掉。
-    2、“正常”：任何活细胞如果活邻居为2个或3个，则继续活。
-    3、“人口过多”：任何活细胞如果活邻居大于3个，则死掉。
-    4、“繁殖”：任何死细胞如果活邻居正好是3个，则活过来。
+    2.1 Introduction
     
-  2.2 构建
-  
-    1 Step 1 Agent
-    在Agent.x10文件中加入实体的所有属性，已经存在的是位置和状态信息，在AddCode后加入。
+    GameOfLife is the most famous set of rules in the Cellular Automaton/Automata (the idea of the rules can be traced back to von Neumann, alias " GameOfLife"). The state of death or viability of each cell is determined by the eight cells surrounding it.The rules are as follows：
+    1."Small population": If there are less than 2 live neighbors, any living cells will die.
+    2."Normal": If there are 2 or 3 live neighbors, any living cells will continue to live.
+    3."Excessive population": If there are more than 3 live neighbors, any living cells will die.
+    4."Breeding": If there are exactly 3 live neighbors, any dead cells will survive.
+    
+    2.2 Construct steps
+    
+        2.2.1 Step 1: Agent
+        Add all the attributes of the entity in the Agent.x10 file. The existing location and status attributes are added. Other attributes are added after AddCode.  In this example, location acquisition, state acquisition, neighbor acquisition, etc. are added as required by the model.
+        
+        2.2.2 Step 2: Grid
+        The grid is set in the Grid.x10 file. In this example, the grid is initially set as 10 both horizontal and vertical, for a total of 100 grids.
 
+        2.2.3 Step 3: Event
+        The simulation event design is performed in the EventSequence.x10 file. In this Demo, four events are set, which are life game initialization (init()), get agent neighbor information (AgentNeighborState()), and life game evolution according to rules (Interactive( )), agent information display (Display ()) four events, at the same time according to the scheduling steps written to the corresponding step.
 
-    在本例中，按照模型需要，加入了位置获取、状态获取、邻居获取等。
-    2 Step 2 Grid
-    在Grid.x10文件中进行网格设置，在本例中，网格初始设置为横向和纵向均为10格，共计100格。
+        2.2.4 Step 4: Model
+        Schedule design in the Model.x10 file to run the specified event at the specified time.
 
+        2.2.5 Step 5: DataCollection
+        Data collection can occur in any given event or at any time, but you need to customize the data collection event.
+        1、Class instantiation
 
-    在本例中，按照模型需要，加入了位置获取、状态获取、邻居获取等。
-    3 Step 3 Event
-    在EventSequence.x10文件中进行仿真事件设计，本例中设置了四个事件，分别是生命游戏初始化（init()）、获取agent的邻居信息（AgentNeighborState()）、生命游戏按规则演进（Interactive()）、agent信息显示（Display()）四个事件，同时按照调度步骤写入对应步中。
+        2、Class implementation
 
+        2.2.6 Step 6: Run
+        Count the time in the main function in the Run.x10 file and set the relevant parameters in the Setting.x10 file.。
 
-    4 Step 4 Model
-    在Model.x10文件中进行调度设计，在指定的时间运行指定的事件。
-
-
-    5 Step 5 DataCollection
-    数据收集可以发生在任意指定事件中，也可在任意时刻进行，但此时需要自定义数据收集事件。
-    1、类实例化
-
-
-    2、类实现
-
-
-    6 Step 6 Run
-    在Run.x10文件中的main函数中进行并统计时间,在Settin.x10文件中设置相关参数。
- 
 
