@@ -50,5 +50,5 @@ Demo: Game Of Life
 
 ## NOTE
 
-We have released version 2.0, please see Demo_PredatorPrey and Demo_GameOfLife.
+We have released version 2.0, please see Demo_PredatorPrey and Demo_GameOfLife_2.
 
