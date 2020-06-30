@@ -53,8 +53,8 @@ Demo: Predator-Prey Model
     
     Then, we can simulate it.
 
-3 Improvements
-​    
+3 Improvements​   
+
     3.1 The function to find the Agent's neighbors
     We use the concept of remote and local, by reducing the operation of at, the simulation time is reduced.
     
