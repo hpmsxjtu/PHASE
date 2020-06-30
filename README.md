@@ -48,3 +48,7 @@ Demo: Game Of Life
         Count the time in the main function in the Run.x10 file and set the relevant parameters in the Setting.x10 file.。
 
 
+## NOTE
+
+We have released version 2.0, please see Demo_PredatorPrey and Demo_GameOfLife.
+
