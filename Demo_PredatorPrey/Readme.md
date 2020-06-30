@@ -9,8 +9,7 @@ Demo: Predator-Prey Model
     1.1 Introduction 
 
     The Predator-Prey model is another classic use case in Agent-based simulation. It intuitively expresses the survival relationship between the predators and the preys, and here we simulate the quantitative relationship between populations.
-
-​    
+   
     1.2 Environment
     + Ubuntu 14.04.4
     + Java Development Kit (JDK) 8 or later (JDK 8 is recommended)
@@ -21,7 +20,7 @@ Demo: Predator-Prey Model
 
 
 2 Demo: Predator-Prey
-​    
+
     2.1 Configuration steps
 
         2.1.1 Step 1: Agent.x10
@@ -53,7 +52,7 @@ Demo: Predator-Prey Model
     
     Then, we can simulate it.
 
-3 Improvements​   
+3 Improvements
 
     3.1 The function to find the Agent's neighbors
     We use the concept of remote and local, by reducing the operation of at, the simulation time is reduced.
